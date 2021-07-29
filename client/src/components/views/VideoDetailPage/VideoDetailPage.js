@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import { List, Avatar, Row, Col } from 'antd';
 import Axios from 'axios';
+import SideVideo from './Sections/SideVideo';
+import Subscribe from './Sections/Subscribe';
+
 
 
 function VideoDetailPage(props) {
@@ -26,27 +29,26 @@ function VideoDetailPage(props) {
 	return (
 		<Row gutter={[16,16]}>
 			<Col lg={18} xs={24}>
-			<div style={{ width: '100%', padding: '3rem 4rem' }}>
-                        <video style={{ width: '100%' }} src={`http://localhost:5000/${VideoDetail.filePath}`} controls></video>
 
+			< div style={{ width: '100%', padding: '3rem 4rem' }}>{/*  width: '100%' ,maxWidth: '1280px', height: "auto", maxHeight : '534px'*/}
+				<video style={{ width: '100%' }} src={`http://localhost:5000/${VideoDetail.filePath}`} controls></video>
+				
                         <List.Item
-                            actions
+                            actions={[<Subscribe userTo={VideoDetail.writer._id} userFrom={localStorage.getItem('userId')}/>]}
                         >
                             <List.Item.Meta
                                 avatar={<Avatar src={VideoDetail.writer.image} />}
                                 title={VideoDetail.writer.name}
                                 description={VideoDetail.description}
                             />
-                            <div></div>
+			<div></div>
                         </List.Item>
-
+			{/* Comments */}
                     </div>
                 </Col>
                 <Col lg={6} xs={24}>
-			sidevideo
-                    {/* <SideVideo /> */}
-
-			</Col>
+			<SideVideo />
+		</Col>
 		</Row>
 	)
 	} else{

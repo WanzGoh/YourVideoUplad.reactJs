@@ -17,6 +17,8 @@ body {
   line-height: 1.5;
   color: #24292e;
   background-color: #fff;
+  overflow-y: scroll; /* 동영상 재상시 화면이 흔들림이 있어 임시로 해두었음. 
+                      When I play video that is shake screen.*/
 }
 
 .app {
