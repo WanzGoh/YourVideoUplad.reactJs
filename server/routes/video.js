@@ -52,6 +52,14 @@ router.post('/uploadVideo', (req, res) =>{
 	})
 	
 })
+
+router.post('/getSubscriptionVideo', (req, res) =>{
+	//search your ID and find who subscripted you.
+	// 
+	
+})
+
+
 router.post('/thumbnail', (req, res) => {
 	//썸네일 생성하고 비디오 러닝타임도 가져오기
 	
